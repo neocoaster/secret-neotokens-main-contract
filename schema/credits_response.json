@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CreditsResponse",
+  "type": "object",
+  "required": [
+    "already_claimed_credits",
+    "available_credits"
+  ],
+  "properties": {
+    "already_claimed_credits": {
+      "type": "integer",
+      "format": "uint64",
+      "minimum": 0.0
+    },
+    "available_credits": {
+      "type": "integer",
+      "format": "uint64",
+      "minimum": 0.0
+    }
+  }
+}

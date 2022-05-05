@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "InitMsg",
+  "type": "object",
+  "required": [
+    "oracle_contract",
+    "token_contract"
+  ],
+  "properties": {
+    "oracle_contract": {
+      "$ref": "#/definitions/ContractInfo"
+    },
+    "token_contract": {
+      "$ref": "#/definitions/Token"
+    }
+  },
+  "definitions": {
+    "ContractInfo": {
+      "type": "object",
+      "required": [
+        "address",
+        "code_hash"
+      ],
+      "properties": {
+        "address": {
+          "description": "contract's address",
+          "allOf": [
+            {
+              "$ref": "#/definitions/HumanAddr"
+            }
+          ]
+        },
+        "code_hash": {
+          "description": "contract's code hash string",
+          "type": "string"
+        }
+      }
+    },
+    "HumanAddr": {
+      "type": "string"
+    },
+    "Token": {
+      "description": "token's contract address and TokenInfo response",
+      "type": "object",
+      "required": [
+        "address",
+        "code_hash"
+      ],
+      "properties": {
+        "address": {
+          "description": "contract address of token",
+          "allOf": [
+            {
+              "$ref": "#/definitions/HumanAddr"
+            }
+          ]
+        },
+        "code_hash": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
